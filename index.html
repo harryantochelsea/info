@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pengumuman Kelulusan 2024/2025</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f8ff;
+        padding: 20px;
+        color: #333;
+      }
+      .container {
+        max-width: 600px;
+        margin: auto;
+        background-color: #fff;
+        padding: 30px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        text-align: center;
+      }
+      input[type="text"] {
+        width: 80%;
+        padding: 10px;
+        margin: 20px 0;
+        font-size: 16px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #2c3e50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+      .result {
+        margin-top: 20px;
+        font-size: 18px;
+        font-weight: bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <h1>PENGUMUMAN KELULUSAN</h1>
+      <h2>SMP ISLAM SUDIRMAN JUWANGI<br />Tahun Ajaran 2024/2025</h2>
+
+      <p>Masukkan NISN Anda untuk melihat hasil kelulusan:</p>
+      <input type="text" id="nisn" placeholder="Masukkan NISN..." />
+      <br />
+      <button onclick="cekKelulusan()">Cek Kelulusan</button>
+
+      <div class="result" id="hasil"></div>
+    </div>
+
+    <script>
+      const dataKelulusan = {
+        "0098982038": "ADITYA ELANG BAGASWARA",
+        "0108131358": "ALVYAN SAPUTRA",
+        "0097961143": "ANDIKA SETIAWAN",
+        "0098229768": "ANDRE BAGIO NUGROHO",
+        "0107049230": "ANGGI PRATIWI",
+        "0102260539": "AZIZ BERGAS MEIVIAN",
+        "0093414819": "DA'IT ALAMSYAH",
+        "0096448337": "DELTA",
+        "0094860030": "DITA GALUH DWI ANDINI",
+        "0107120967": "EDI SISWANTO",
+        "0105612990": "Elza Aira Sari",
+        "0098694292": "FACHRI NUR KHOLIK",
+        "0101011886": "FEBIOLA",
+        "0102501547": "FERIDHA ANUGRAH LESTARI",
+        "0106233335": "FERITHA ANUGRAH LESTARI",
+        "0093642579": "ILHAM SUBUR WAHONO",
+        "0101083394": "ILYAS TIAN AVRIZAL",
+        "0094195681": "KAILA NADHIMATUS SAHLA",
+        "0106646272": "MARSEL FANTINO",
+        "0109550494": "MASRIVATUL AINI",
+        "0105534508": "MUHAMMAD YANUAR ARIFIN ILHAM",
+        "0096142360": "NOVA ARYADI",
+        "0113441746": "Puspita Harnanti",
+        "0097259526": "RAFI AHMAD RHOMADHON",
+        "0107272983": "Rifki Faozan",
+        "0098040399": "SASTIAN ARIL KARLITO",
+        "0091283313": "SHELY WIDI RAHMADANI",
+        "0095207464": "SHILFY AULIA SARI",
+        "0102873497": "SIDIK NURSETO",
+        "0107610370": "SIGIT IRAWAN",
+        "0106042536": "SOMA ARYA GUNA",
+        "0072025282": "TRIA AMALIYA",
+      };
+
+      function cekKelulusan() {
+        const nisn = document.getElementById("nisn").value.trim();
+        const hasil = document.getElementById("hasil");
+        if (dataKelulusan[nisn]) {
+          hasil.innerHTML = `Selamat, <strong>${dataKelulusan[nisn]}</strong> dinyatakan <span style="color: green;">LULUS</span>.`;
+        } else {
+          hasil.innerHTML = `<span style="color: red;">NISN tidak ditemukan. Silakan periksa kembali.</span>`;
+        }
+      }
+    </script>
+  </body>
+</html>
